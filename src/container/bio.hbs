@@ -1,0 +1,198 @@
+<div>
+    <header>
+        {{> title data=name big=true}}
+        <br>
+        <em>Народився {{birthdate}}, {{birthplace}}.</em>
+        <br>
+        <br>
+        <em>Помер {{deathdate}}, {{deathplace}}</em>
+        <br>
+        <br>
+        <span>Національність: {{nationality}}</span>
+        <br>
+    
+    </header>
+
+    <br>
+    <hr>
+
+    <section>
+        {{> title data='Наука та цікаві факти'}}
+        
+            <h4>Відомі досягнення:</h4>
+
+            <ul>
+            {{#each known_for}}
+            <li>
+                {{this}}
+                <br>
+                <br>
+            </li>
+            {{/each}}
+        </ul>
+
+        <br>
+        
+        <h4>Освіта:</h4>
+        <ul>
+            {{#each education}}
+                <li>
+                    <div>
+                        {{degree}}, field: {{field}}
+                    </div>
+                    <br>
+                    <div>
+                        {{institution}} ({{year}})
+                    </div>
+                    <br>
+                </li>
+            {{/each}}
+        </ul>
+
+        <br>
+
+        <h4>Важливі публікації:</h4>
+
+
+
+        <ul>
+            {{#each notable_publications}}
+            <li>
+                <div>{{title}} ({{year}})</div>
+                <br>
+                <div>Publisher: {{publisher}}</div>
+                <br>
+            </li>
+            {{/each}}
+        </ul>
+
+        <br>
+
+        <h4>Нагороди:</h4>
+
+        <ul>
+            {{#each awards}}
+            <li>
+                <div>
+                    {{title}} ({{year}})
+                </div>
+
+
+                <div>
+                    <p>
+                        {{description}}
+                    </p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+
+        <br>
+
+        <h4>Важливі винаходи:</h4>
+
+        <ul>
+            {{#each major_discoveries}}
+            <li>
+                <div>{{title}}, ({{year}})</div>
+                <div>
+                    <p>{{description}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+
+        <br>
+
+        <h4>Внесок в науку</h4>
+        {{#with contributions}}
+        <div>
+            <div>
+                {{title}}, field: {{field}}
+            </div>
+            <br>
+            <div>{{year}}</div>
+
+            <p>
+                {{description}}
+            </p>
+        </div>
+        {{/with}}
+
+        <br>
+    </section>
+
+    <hr>
+
+    <section>
+        {{> title data='Відносини з людьми та значення вченого для людей'}}
+
+        <h4>Партнери:</h4>
+
+        <ul>
+            {{#each partners}}
+                <li>
+                    <div>
+                        {{name}}. {{relationship}} ({{years}})
+                    </div>
+                    <br>
+                </li>
+            {{/each}}
+        </ul>
+
+        <h4>Люди, які вплинули на {{name}}</h4>
+
+        <ul>
+            {{#each influences}}
+            <li>
+                {{this}}
+                <br>
+                <br>
+            </li>
+            {{/each}}
+        </ul>
+
+        <h4>Люди, на яких вплинув {{name}}</h4>
+
+        <ul>
+            {{#each influenced}}
+            <li>
+                {{this}}
+                <br>
+            </li>
+            {{/each}}
+        </ul>
+
+    </section>
+
+    <br>
+    <hr>
+
+    <section>
+        {{> title data='Цитати'}}
+
+        <ul>
+            {{#each quotes}}
+            <li>
+                <q>
+                    {{this}}                
+                </q>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <br>
+    <hr>
+    
+
+
+
+
+
+
+
+
+
+
+</div>
