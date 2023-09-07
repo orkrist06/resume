@@ -1,0 +1,192 @@
+<div>
+    <header>
+        {{> title data="About car" big=true}}
+        <h3>{{make}} {{model}}</h3>
+    </header>
+
+    <main>
+        <section>
+            <e>Year: {{year}}</e>
+            <br>
+            <e>Color: {{color}}</e>
+            <br>
+        </section>
+        <br>
+        <hr>
+        <section>
+            {{#with features}}
+            <h3>Lets talk about features!</h4>
+                {{#with interior}}
+                    {{#with seats}}
+                        <h4>Seats:</h4>
+                        <span>Material: {{material}}</span>
+                        <span>Color: {{color}}</span>
+                        {{#if heated}}
+                            <span>Heated: Yes</span>
+                        {{/if}}
+                        {{#if ventilated}}
+                            <span>Ventilated: Yes</span>
+                        {{/if}}
+                    {{/with}}
+
+                    {{#with dashboard}}
+                        <h4>About dashboard.</h4>
+
+                        <span>Material: {{material}}</span>
+                        <span>Color: {{color}}</span>
+                        {{#with display}}
+                            <span>Display type: {{type}}</span>
+                            <span>Display size: {{size}}</span>
+                            <span>Display resolution: {{resolution}}</span>
+                            {{#if touchscreen}}
+                                <span>Have touchscreen</span>
+                            {{/if}}
+                        {{/with}}
+                    {{/with}}
+
+                    {{#with audio}}
+                        <h4>About audio system.</h4>
+
+                        <span>{{system}}</span>
+                        <span>Speakers: {{speakers}}</span>
+                        {{#if subwoofer}}
+                            <span>Have subwoofer</span>
+                        {{/if}}
+                        {{#if bluetooth}}
+                            <span>Have bluetooth</span>
+                        {{/if}}
+                        {{#if USB}}
+                            <span>Have USB</span>
+                        {{/if}}
+                    {{/with}}
+
+                    {{#with exterior}}
+                        <h4>Exterior</h4>
+
+                        {{#with wheels}}
+                            <span>Wheels size: {{size}}</span>
+                            <span>Wheels type: {{type}}</span>
+                            <span>Wheels color: {{color}}</span>
+                        {{/with}}
+
+                        {{#with headlights}}
+                            <span>Headlights type: {{type}}</span>
+                            <span>Headlights brightness: {{brightness}}</span>
+                            {{#if automatic}}
+                                <span>Headlights automatic: Yes</span>
+                            {{/if}}
+                        {{/with}}
+
+                        {{#with sunroof}}
+                            <span>Sunroof type: {{type}}</span>
+                            <span>Sunroof size: {{size}}</span>
+                            {{#if automatic}}
+                                <span>Sunroof automatic: Yes</span>
+                            {{/if}}
+                        {{/with}}
+                    {{/with}}
+
+                    {{#with safety}}
+                        {{#with airbags}}
+                            <span>Front airbags: {{front}}</span>
+                            <span>Side airbags: {{side}}</span>
+                            <span>Knee airbags: {{knee}}</span>
+                            <span>Rear airbags: {{rear}}</span>
+                        {{/with}}
+
+                        {{#with assistanse}}
+                            <e>Assistanse.</e>
+
+                            {{#if blind_spot_monitoring}}
+                                <span>Have blind spot monitoring</span>
+
+                            {{else}}
+                                <span>Blind spot monitoring: -</span>
+                            {{/if}}
+
+                            {{#if rear_cross_traffic_alert}}
+                                <span>Have rear cross trafic alert</span>
+
+                            {{else}}
+                                <span>Rear cross trafic alert: -</span>
+                            {{/if}}
+
+                            {{#if lane_departure_warning}}
+                                <span>
+                                    Have lane departure warning.
+                                </span>
+
+                            {{else}}
+                                <span>Lane departure warning: -</span>
+                            {{/if}}
+
+                            {{#if adaptive_cruise_control}}
+                                <span>Have adaptive cruise control</span>
+
+                            {{else}}
+                                <span>Adaptive cruise control: -</span>
+                            {{/if}}
+
+                            {{#if collision_warning}}
+                                <span>Have collision warning</span>
+
+                            {{else}}
+                                <span>Collision warning: -</span>
+                            {{/if}}
+                        {{/with}}
+                    {{/with}}
+
+            {{#with engine}}
+                <h3>Lets talk about engine!</h3>
+
+                <span>Type: {{type}}</span>
+                <span>Displacement: {{displacement}}</span>
+                <span>Horsepower: {{horsepower}}</span>
+                <span>Torque: {{Torque}}</span>
+                <span>Transmission type: {{transmission.type}}</span>
+                <span>Transmission gears: {{transmission.gears}}</span>
+            {{/with}}
+
+            {{#with fuel_economy}}
+                <h3>Fuel economy</h3>
+
+                <span>City: {{city}}</span>
+                <span>Highway: {{highway}}</span>
+                <span>Combined: {{combined}}</span>
+            {{/with}}
+
+            {{#with price}}
+                <h3>Price of our machine!</h3>
+
+                <span>Base: {{base}}</span>
+                <span>Destination: {{destination}}</span>
+                {{#with options}}
+                    <e>Options</e>
+
+                    <ul>
+                        <li>
+                            Navigation: {{navigation}}
+                        </li>
+
+                        <li>
+                            Moonfoof: {{moonroof}}
+                        </li>
+
+                        <li>
+                            Premium paint: {{premium_paint}}
+                        </li>
+                    </ul>
+                {{/with}}
+
+                <strong>TOTAL: {{total}}</strong>
+            {{/with}}
+                    
+
+                {{/with}}    
+            {{/with}}
+        </section>
+    </main>
+
+
+
+</div>
