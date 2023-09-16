@@ -1,0 +1,65 @@
+<header>
+    {{#with page_header}}
+        <h1 class="text-center">{{title}}</h1>
+        <p class="text-center">{{description}}</p>
+    {{/with}}
+    
+</header>
+
+
+<main>
+    {{#with section}}
+        <div class="card">
+            <div class="card-body">
+                {{#with about_us}}
+                    {{#with title_list}}
+                    <div class="display-6" "text-end">{{sub}}</div>
+                    <br>
+                    <h2 class="text-end">{{main}}</h2>
+                    {{/with}}
+
+                    <br>
+
+                    <button class="btn btn-info">{{button.text}}</button>
+                {{/with}}
+            </div>
+        </div>
+
+        {{> space}}
+
+        <div class="card">
+            <div class="card-body">
+                {{#with advantage}}
+
+                <div class="display-5">{{title}}</div>
+
+                <br>
+                <br>
+
+                <div class="card">
+                    <div class="card-body">
+                        {{#with efficiency}}
+                            <div class="display-4">{{title}}</div>
+                            <br>
+                            <h6>{{sub_title}}</h6>
+                            <br>
+
+                            <p>{{description}}</p>
+
+                            <br>
+
+                            <button class="btn btn-warning">{{button}}</button>
+                        {{/with}}
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    {{/with}}
+</main>
