@@ -94,7 +94,7 @@
                                 {{#each select}}
                                 <div class="col-6">
                                     <label class="form-label">{{label}}</label>
-                                    <select aria-placeholder="{{placeholder}}" class="form-select">
+                                    <select class="form-select">
                                         <option disabled selected hidden>
                                             <span class="text-muted">{{placeholder}}</span>
                                         </option>
@@ -175,10 +175,109 @@
                     </div>
 
                     {{#with coment}}
-                        <label class="form-label">{{label}}</label>
-                        <input class="form-control" placeholder="{{placeholder}}">
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control" placeholder="{{placeholder}}">
                     {{/with}}
-    
+
+                    <div>
+                        <hr>
+                    </div>
+
+
+
+                    {{/with}}
+
+                    {{#with coupon}}
+                    <h3 class="mt-5 mb-3">{{title}}</h3>
+
+                    {{#with select}}
+                        {{#with availabel_coupon}}
+                        <label class="form-label">{{label}}</label>
+                        <select class="form-select form-select-lg">
+                            <option disabled selected hidden>{{placeholder}}</option>
+                            {{#each options}}
+                            <option value="{{value}}">{{text}}</option>
+                            {{/each}}
+                        </select>
+                        {{/with}}
+
+                        {{#with friend_coupon}}
+                        <label class="form-label mt-3">{{label}}</label>
+                        <select class="form-select form-select-sm">
+                            <option disabled selected hidden>{{placeholder}}</option>
+
+                            {{#each options}}
+                                <option value="{{value}}">{{text}}</option>
+                            {{/each}}
+                        </select>
+                        {{/with}}
+                    {{/with}}
+
+                    {{#with add}}
+                        {{#with friend}}
+                            <label class="form-label mt-3">{{label}}</label>
+                            <input placeholder="{{placeholder}}" class="form-control">
+                            <div class="form-text">{{caption}}</div>
+                        {{/with}}
+
+                        {{#with colleague}}
+                            <label class="form-label mt-3">{{label}}</label>
+                            <input placeholder="{{placeholder}}" class="form-control">
+                            <div class="form-text">{{caption}}</div>
+                        {{/with}}
+                            
+                    {{/with}}
+
+                    {{/with}}
+
+                    <div>
+                        <hr>
+                    </div>
+
+                    {{#with quiz}}
+                        <h3 class="mt-4">{{title}}</h3>
+
+                        {{#with preference}}
+                        <label class="form-label mt-2">{{title}}</label>
+                        {{#each options}}
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="quiz">
+                            <label class="form-check-label">{{this}}</label>
+                        </div>
+                        {{/each}}
+
+                        {{/with}}
+
+                        {{#with your_expirience}}
+                        <label class="form-label mt-2">{{label}}</label>
+                        <input class="form-control">
+                        {{/with}}
+
+                        {{#with purchase_frequency}}
+                        
+                        <label class="form-label mt-2">{{label}}</label>
+                        <select class="form-select">
+                            <option disabled selected hidden>{{placeholder}}</option>
+
+                            {{#each options}}
+                                <option value="{{value}}">{{text}}</option>
+                            {{/each}}
+                        </select>
+                        {{/with}}
+
+                        {{#with factors}}
+                        <label class="form-label mt-2">
+                            {{title}}
+                        </label>
+
+                        {{#each options}}
+                            <div class="form-check">
+                                <label class="form-check-label">{{this}}</label>
+                                <input class="form-check-input" type="checkbox">
+                            </div>
+                        {{/each}}
+                        {{/with}}
                     {{/with}}
                 </div>
 
@@ -243,3 +342,30 @@
 
     </div>
 </main>
+
+
+<div>
+    <hr>
+</div>
+
+<footer>
+    <div class="row">
+        <div class="col-12">
+            <div class="nav flex-column">
+                <div class="row">
+                    {{#each footer}}
+                    {{#each this}}
+                    <div class="col-3">
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{link}}">{{text}}</a>
+                        </div>
+
+                    </div>
+                    {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
