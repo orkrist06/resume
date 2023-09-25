@@ -482,7 +482,7 @@ router.get('/shoporder', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task51', {
+  res.render('shoporder', {
     layout: 'bootstrap',
     navigation: {
       links: [
