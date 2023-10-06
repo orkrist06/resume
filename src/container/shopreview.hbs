@@ -1,0 +1,130 @@
+<main class="p-2">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-8">
+                {{#with formBlock}}
+                <h2>{{header}}</h2>
+
+                <div class="mt-2">{{rating.title}}: {{rating.value}}</div>
+
+                <section class="my=2">
+                    {{#with actionBlock}}
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="nav nav-tabs m-4">
+                                {{#each tabs}}
+                                <div class="col-3">
+                                    <div class="nav-item">
+                                        <a href="#"
+                                            class="nav-link {{#if isActive}}active{{/if}} text-center">{{text}}</a>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+
+
+                        <div class="my-5">
+                            <hr>
+                        </div>
+
+                        <div class="col-12">
+                            {{#with report}}
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title">{{title}}</div>
+
+                                    <a class="btn btn-secondary" href="{{button.link}}">{{button.text}}</a>
+                                </div>
+                            </div>
+                            {{/with}}
+                        </div>
+
+                        <div class="my-5">
+                            <hr>
+                        </div>
+
+
+                    </div>
+                    {{/with}}
+
+
+                    {{#with feedbackBlock}}
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>{{title}}</h2>
+                        </div>
+
+                        <div class="my-5 col-12">
+                            <div class="row">
+                                {{#each buttons}}
+                                <div class="col-3 text-center">
+                                    <a class="btn {{#if isWarning}}btn-warning{{else}}{{#if isSuccess}}btn-success{{else}}{{#if isDanger}}btn-danger{{/if}}{{/if}}{{/if}}"
+                                        href="{{link}}">{{text}}</a>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/with}}
+                </section>
+                {{/with}}
+            </div>
+
+            <div class="col-4">
+                {{#with formBlock/goodsInfo}}
+                <div class="card text-center my-2">
+                    <div class="card-body">
+                        <img src="{{photo}}">
+
+                        <div class="card.title">
+                            {{name}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div>{{price}}</div>
+
+                        {{#if inMarket}}
+                        <div>В наявності</div>
+                        {{else}}
+                        <div>Немає в наявності</div>
+                        {{/if}}
+
+                        {{#each buttons}}
+                            <a class="mt-2 btn {{#if isPrimary}}btn-primary{{/if}}{{#if isSecondary}}btn-secondary{{/if}}">
+                                {{text}}
+                            </a>
+                            <br>
+                        {{/each}}   
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+
+            <section>
+                {{> reviewItem reviewList=reviewList seller=seller title=title value=value rating=rating text=text advantages=advantages disadvantages=disadvantages images=images coments=coments userName=userName date=date}}
+            </section>
+
+            <section class="p-2">
+                <div class="col-12 text-center text-bg-success p-3">
+                    {{#with service}}
+                        <h2>{{title}}</h2>
+
+                        <p>{{description}}</p>
+
+                        {{#each buttons}}
+                            <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+                        {{/each}}
+                    {{/with}}
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<div class="my-5">
+    <hr>
+</div>
