@@ -7,7 +7,7 @@
                     {{#each this}}
                     <div class="col-3">
                         <div class="nav-item">
-                            <a class="nav-link" href="{{href}}">{{text}}</a>
+                            <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{href}}">{{text}}</a>
                         </div>
 
                     </div>
